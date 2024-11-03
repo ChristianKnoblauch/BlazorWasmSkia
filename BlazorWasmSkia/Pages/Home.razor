@@ -1,0 +1,17 @@
+﻿@page "/"
+
+<div class="grid grid-cols-1 grid-rows-[80px_300px_300px]">
+    
+    <button class="row-start-1 row-end-2 col-start-1 col-end-2 active:scale-75 bg-blue-400 w-20 h-20 rounded-full text-white font-bold place-self-center" @onclick="ToggleVisible">
+        <span>Toggle Visible</span>
+    </button>
+
+    <div class="bg-gray-400 row-start-2 row-end-3 col-start-1 col-end-2 flex justify-around" style="display: @Visible">
+        <SKCanvasView @ref="canvasView1" OnPaintSurface="OnPaintSurface" />
+    </div>
+
+    <div class="bg-gray-600 row-start-3 row-end-4 col-start-1 col-end-2 place-self-center" style="display: @Visible">
+        <SKCanvasView @ref="canvasView2" OnPaintSurface="OnPaintSurface" />
+    </div>
+
+</div>
